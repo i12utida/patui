@@ -1,2 +1,15 @@
-<h1>StaticPages#stationery</h1>
-<p>Find me in app/views/static_pages/stationery.html.erb</p>
+<% provide(:title, "Stationery") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+  </head>
+  <body>
+    <h1>Stationery</h1>
+    <p>
+      This is the home page for the
+      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+      sample application.
+    </p>
+  </body>
+</html>
