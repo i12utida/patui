@@ -10,6 +10,9 @@ class StaticPagesController < ApplicationController
 
   def questionnaire
   end
+  
+  def contact
+  end
 
   def stationery
   end

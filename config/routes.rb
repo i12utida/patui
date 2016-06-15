@@ -1,21 +1,23 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
 
-  get 'static_pages/product'
+  get 'product' => 'static_pages#product'
 
-  get 'static_pages/news'
+  get 'news' => 'static_pages#news'
 
-  get 'static_pages/questionnaire'
+  get 'questionnaire' => 'static_pages#questionnaire'
+  
+  get 'contact' => 'static_pages#contact'
 
-  get 'static_pages/stationery'
+  get 'stationery' => 'static_pages#stationery'
 
-  get 'static_pages/drink'
+  get 'drink' => 'static_pages#drink'
 
-  get 'static_pages/noodle'
+  get 'noodle' => 'static_pages#noodle'
 
-  get 'static_pages/bread'
+  get 'bread' => 'static_pages#bread'
 
-  get 'static_pages/lunch'
+  get 'lunch' => 'static_pages#lunch'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
