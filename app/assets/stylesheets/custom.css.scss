@@ -59,12 +59,11 @@ p {
 
 #logo {    /* #をつけることでCSS idとなり、ここは一度しか使われなくなる*/
   float: left;  /*この要素を左に寄せる*/
-  margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 4.0em;
   color: $white;  /*fffはhtmlのカラーコードで白*/
   text-transform: none;  /*テキストの大文字小文字を変化させる*/
   letter-spacing: -1px;
-  padding-top: 9px;  /*領域の上側に空間を作る*/
+  padding-top: 1px;  /*領域の上側に空間を作る*/
   font-weight: bold;
 }
 
@@ -73,6 +72,12 @@ p {
   text-decoration: underline;  /*テキストのデコレーション*/
 }
 
+header ul li {
+  margin-top: 17px;
+  float: right;
+  margin-right: 15px;
+  font-size: 2.0em;
+}
 /* footer */
 
 footer {
