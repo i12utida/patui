@@ -1,13 +1,31 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
-        <%= link_to  image_tag(asset_path "preview9.jpg",:border => '0' ,:alt => 'ホームに戻る'), root_path , id: "logo" %>
+        <%= link_to  image_tag(asset_path "patseye.jpg",:border => '0' ,:alt => 'ホームに戻る',:align => 'left'), root_path , id: "logo" %>
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "ホーム",   root_path %></li>
             <li><%= link_to "商品",   product_path %></li>
             <li><%= link_to "お知らせ", news_path %></li>
             <li><%= link_to "アンケート",  questionnaire_path %></li>
-            <li><%= link_to "ログイン", signup_path %></li>
+            <li><%= link_to "Sign Up", signup_path %></li>
+            <% if logged_in? %>
+              <li><%= link_to "Users", users_path %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  アカウント <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "プロフィール", current_user %></li>
+                  <li><%= link_to "設定", edit_user_path(current_user) %></li>
+                  <li class="divider"></li>
+                    <li>
+                      <%= link_to "ログアウト", logout_path, method: "delete" %>
+                    </li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to "ログイン", login_path %></li>
+            <% end %>
           </ul>
         </nav>
       </div>
