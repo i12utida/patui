@@ -1,34 +1,25 @@
 Rails.application.routes.draw do
-  
+
   root 'static_pages#home'
-
   get 'product' => 'static_pages#product'
-
   get 'news' => 'static_pages#news'
-
-  get 'questionnaire' => 'static_pages#questionnaire'
-  
+  get 'questionnaires' => 'questionnaires#index'
   get 'contact' => 'static_pages#contact'
-
   get 'stationery' => 'static_pages#stationery'
-
   get 'drink' => 'static_pages#drink'
-
   get 'noodle' => 'static_pages#noodle'
-
   get 'bread' => 'static_pages#bread'
-
   get 'lunch' => 'static_pages#lunch'
-  
   get 'signup' => 'users#new'
   
   resources :users
   
   get    'login'   => 'sessions#new'
-  
   post   'login'   => 'sessions#create'
-  
   delete 'logout'  => 'sessions#destroy'
+  
+  get "questionnaires/:id" => "questionnaires#delete"
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
