@@ -18,8 +18,9 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  post   "questionnaire" => "questionnaires#create"
-  delete "questionnaire" => "questionnaires#delete"
+  get "questionnaires/new" => "questionnaires#new"
+  post   "questionnaires" => "questionnaires#create"
+  delete "questionnaires" => "questionnaires#delete"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

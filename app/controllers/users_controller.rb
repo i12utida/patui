@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      flash[:success] = "Welcome to the Patui!"
+      flash[:success] = "PATSEYEへようこそ!"
       redirect_to @user
     else
       render 'new'
@@ -32,13 +32,13 @@ class UsersController < ApplicationController
   
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = "対象が排除されました"
     redirect_to users_url
   end
   
   def update
     if @user.update_attributes(user_params)    # 更新に成功したときの処理
-      flash[:success] = "Profile updated"
+      flash[:success] = "アカウント情報を更新しました"
       redirect_to @user
     else
       render 'edit'
@@ -53,15 +53,6 @@ class UsersController < ApplicationController
     end
   
   # beforeフィルター
-
-    # ログイン済みユーザーかどうか確認
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
     
     # 正しいユーザーかどうか確認
     def correct_user
