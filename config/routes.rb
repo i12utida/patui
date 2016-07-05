@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'questionnaires/index'
+
   root 'static_pages#home'
   get 'product' => 'static_pages#product'
   get 'news' => 'static_pages#news'
