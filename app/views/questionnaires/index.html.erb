@@ -1,2 +1,22 @@
-<h1>Questionnaires#index</h1>
-<p>Find me in app/views/questionnaires/index.html.erb</p>
+<h1>アンケート一覧</h1>
+<li><%= link_to "アンケート投稿", "#" %></li>
+  <% @questionnaires.each do |question| %>
+        <table class="attributes">
+            
+            <tr>
+                <th>投稿日時</th>
+                <td><%= time_ago_in_words(question.created_at.strftime("%Y-%m-%d %H:%M:%S")) %></td>  <!-- 時間順に表示 -->
+            </tr>
+    
+            <tr>
+                <th>内容</th>
+                <td><%= question.content %></td>
+            </tr>
+            
+            <tr>
+                <th>操作</th>
+                <td><%= link_to '削除', :controller => 'questionnaires',:action => 'delete', :id => question.id %></td>
+            </tr>
+            
+        </table>
+    <% end %>

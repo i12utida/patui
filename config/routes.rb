@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'questionnaires/index'
-
   root 'static_pages#home'
   get 'product' => 'static_pages#product'
   get 'news' => 'static_pages#news'
@@ -20,8 +18,8 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
-  get "questionnaires/:id" => "questionnaires#delete"
-
+  post   "questionnaire" => "questionnaires#create"
+  delete "questionnaire" => "questionnaires#delete"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
