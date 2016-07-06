@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
   get 'product' => 'static_pages#product'
-  get 'news' => 'static_pages#news'
-  get 'questionnaires' => 'questionnaires#index'
   get 'contact' => 'static_pages#contact'
   get 'stationery' => 'static_pages#stationery'
   get 'drink' => 'static_pages#drink'
@@ -18,10 +16,13 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   
+  get 'questionnaires' => 'questionnaires#index'
   get "questionnaires/new" => "questionnaires#new"
   post   "questionnaires" => "questionnaires#create"
   get "questionnaires/:id" => "questionnaires#delete"
-
+  
+  get 'news' => 'news#index'
+  get "news/:id" => "news#delete"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

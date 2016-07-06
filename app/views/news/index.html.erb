@@ -1,0 +1,28 @@
+<h1>お知らせ</h1>
+  <% @news.each do |news| %>
+        <table class="attributes">
+            
+            <tr>
+                <th>投稿日時</th>
+                <td><%= time_ago_in_words(news.created_at.strftime("%Y-%m-%d %H:%M:%S")) %></td>  <!-- 時間順に表示 -->
+            </tr>
+    
+            <tr>
+                <th>タイトル</th>
+                <td><%= news.title %></td>
+            </tr>
+            
+            <tr>
+                <th>内容</th>
+                <td><%= news.content %></td>
+            </tr>
+            
+            <% if current_user.admin? %>
+                <tr>
+                    <th>操作</th>
+                    <td><%= link_to '削除', :controller => 'news',:action => 'delete', :id => news.id %></td>
+                </tr>
+            <% end %>
+            
+        </table>
+    <% end %>
