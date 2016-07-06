@@ -15,12 +15,23 @@ class QuestionnairesController < ApplicationController
       flash[:success] = "アンケートが投稿されました!"
       redirect_to questionnaires_path
     else
-      redirect_to questionnaires_path
+      flash.now[:danger] = "アンケートの投稿に失敗しました。"
+      render 'questionnaires/new'
     end
   end
   
   def delete
     @questionnaire = Questionnaire.find_by(:id => params[:id])
+    if current_user.id == @questionnaire.user_id
+      @questionnaire.destroy
+      flash[:success] = "削除しました。"
+      redirect_to questionnaires_path
+    else
+      flash[:danger] = "人のは削除できませんよ。"
+      redirect_to questionnaires_path
+    end
+      
+      
   end
   
   private

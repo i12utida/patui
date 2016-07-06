@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   
   get "questionnaires/new" => "questionnaires#new"
   post   "questionnaires" => "questionnaires#create"
-  delete "questionnaires" => "questionnaires#delete"
+  get "questionnaires/:id" => "questionnaires#delete"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
