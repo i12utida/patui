@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   get "questionnaires/:id" => "questionnaires#delete"
   
   get 'news' => 'news#index'
+  get "news/new" => "news#new"
+  post 'news' => 'news#create'
   get "news/:id" => "news#delete"
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

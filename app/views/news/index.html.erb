@@ -1,5 +1,11 @@
+<% provide(:title, 'お知らせ') %>
 <h1>お知らせ</h1>
-  <% @news.each do |news| %>
+
+<% if current_user.admin? %>
+    <li><%= link_to "お知らせ投稿", "/news/new" %></li>
+<% end %>
+
+    <% @news.each do |news| %>
         <table class="attributes">
             
             <tr>
