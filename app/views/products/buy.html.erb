@@ -1,0 +1,14 @@
+<% provide(:title, '商品購入') %>
+<h1>バーコードをバーコードリーダで読み取ってください</h1>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_for @product, :url => {:controller => 'products', :action => 'update'} do |f| %>
+            <%= render 'shared/product_form' %>
+        
+            <%= f.label :jan_code, "JANコード" %>
+            <%= f.number_field :jan_code, class: 'form-control' %>
+        
+            <%= f.submit "購入する", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>

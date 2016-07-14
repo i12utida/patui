@@ -6,7 +6,7 @@
     <%= form_for(@questionnaire) do |f| %>
     <%= render 'shared/questionnaire_form' %>
 
-      <%= f.label :content %>
+      <%= f.label :content , "アンケート内容" %>
       <%= f.text_field :content, class: 'form-control' %>
 
       <%= f.submit "投稿する", class: "btn btn-primary" %>

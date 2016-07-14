@@ -238,3 +238,31 @@ table.attributes th {
   background-color: #cc4;
 }
 
+  /* Product */
+
+table.product_01{
+width: 80%;
+border-collapse: collapse;
+}
+
+table.product_01 th{
+width: 25%;
+padding: 6px;
+text-align: left;
+vertical-align: top;
+color: #333;
+background-color: #eee;
+border: 1px solid #b9b9b9;
+}
+
+table.product_01 td{
+padding: 6px;
+background-color: #fff;
+border: 1px solid #b9b9b9;
+}
+
+  /* リスト */
+  
+list{
+  margin-left: 20px;
+}

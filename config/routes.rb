@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
+
   root 'static_pages#home'
-  get 'product' => 'static_pages#product'
   get 'contact' => 'static_pages#contact'
   get 'stationery' => 'static_pages#stationery'
-  get 'drink' => 'static_pages#drink'
-  get 'noodle' => 'static_pages#noodle'
-  get 'bread' => 'static_pages#bread'
-  get 'lunch' => 'static_pages#lunch'
   get 'signup' => 'users#new'
   
   resources :users
@@ -26,6 +22,15 @@ Rails.application.routes.draw do
   post 'news' => 'news#create'
   get "news/:id" => "news#delete"
   
+  get 'products' => 'products#index'
+  get 'lunch' => 'products#lunch'
+  get 'bread' => 'products#bread'
+  get 'noodle' => 'products#noodle'
+  get 'drink' => 'products#drink'
+  get "products/new" => "products#new"
+  post 'products' => 'products#create'
+  get "products/buy" => "products#buy"
+  update "products" => "products#update"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

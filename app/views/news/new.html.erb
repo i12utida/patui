@@ -6,10 +6,10 @@
     <%= form_for(@news, url: news_path([@news])) do |f| %>
         <%= render 'shared/news_form' %>
         
-        <%= f.label :title %>
+        <%= f.label :title, "タイトル" %>
         <%= f.text_field :title, class: 'form-control' %>
 
-        <%= f.label :content %>
+        <%= f.label :content, "内容" %>
         <%= f.text_field :content, class: 'form-control' %>
 
     <%= f.submit "投稿する", class: "btn btn-primary" %>

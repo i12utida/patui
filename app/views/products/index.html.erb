@@ -1,0 +1,39 @@
+<% provide(:title, '商品一覧') %>
+<h1>商品一覧</h1>
+<% if current_user.admin? %>
+<list>
+    <%= link_to "商品追加", "/products/new" %>
+</list>
+<list>
+    <%= link_to "購入", "/products/buy" %>
+</list>
+<% end %>
+<list>
+    <%= link_to "商品一覧", products_path %>
+</list>
+<list>
+    <%= link_to "弁当類", lunch_path %>
+</list>
+<list>
+    <%= link_to "パン類", bread_path %>
+</list>
+<list>
+    <%= link_to "麺類", noodle_path %>
+</list>
+<list>
+    <%= link_to "飲料類", drink_path %>
+</list>
+<table class="product_01">
+    <tr>
+        <th>商品名</th>
+        <th>在庫数</th>
+        <th>価格</th>
+    </tr>
+    <% @products.each do |p| %>
+        <tr>
+            <td><%= p.product_name %></td>
+            <td><%= p.product_stack %></td>
+            <td><%= p.product_cost %></td>
+        </tr>
+    <% end %>
+</table>

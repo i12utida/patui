@@ -1,4 +1,5 @@
 class NewsController < ApplicationController
+  before_action :logged_in_user, only: [:index, :create, :destroy]
   before_action :admin_user,     only: :delete
   
   def index

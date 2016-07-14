@@ -6,19 +6,19 @@
     <%= form_for(@user) do |f| %>
     <%= render 'shared/error_messages' %>
     
-      <%= f.label :gakuseki %>
+      <%= f.label :gakuseki, "学籍番号" %>
       <%= f.number_field :gakuseki, class: 'form-control' %>
 
-      <%= f.label :name %>
+      <%= f.label :name, "ユーザーネーム" %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %><p>(学内メールのみ登録可能)</p>
+      <%= f.label :email, "E-メールアドレス" %><p>(学内メールのみ登録可能)</p>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "パスワード" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "確認のためパスワードをもう一度入力してください" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
