@@ -35,24 +35,8 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
   
-  def buy
-    logger.debug('test')
-    @product=Product.new
-  end
-
-  def update
-    logger.debug('test2')
-    @product = Product.find_by(:jan_code => params[:jan_code])
-    @product.update({:product_stack => @product.product_stack - 1})
-    redirect_to 'products/buy'
-  end
-  
   def is_drink?
     p.product_type==drink
-  end
-  
-  def product_params
-      params.require(:product).permit(:jan_code,:product_name, :product_stack, :product_cost, :product_type)
   end
   
 end

@@ -28,10 +28,11 @@ Rails.application.routes.draw do
   get 'noodle' => 'products#noodle'
   get 'drink' => 'products#drink'
   get "products/new" => "products#new"
-  post 'products' => 'products#create'
-  get "products/buy" => "products#buy"
-  update "products" => "products#update"
+  match 'products/create' => 'products#create',:via => :post
 
+  get 'registers' => 'registers#register'
+  match 'procucts/buy'  => 'registers#buy',:via => :post
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
