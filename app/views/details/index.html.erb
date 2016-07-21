@@ -1,5 +1,5 @@
-<% provide(:title, '商品一覧') %>
-<h1>商品一覧</h1>
+<% provide(:title, '商品詳細') %>
+<h1>商品詳細</h1>
 <% if logged_in? && current_user.admin? %>
 <list>
     <%= link_to "商品追加", "/products/new" %>
@@ -7,9 +7,6 @@
 <list>
     <%= link_to "購入", "/products/buy" %>
 </list>
-<list>
-    <%= link_to "商品詳細", "/products/detail" %>
-</list>    
 <% end %>
 <list>
     <%= link_to "商品一覧", products_path %>
@@ -28,15 +25,19 @@
 </list>
 <table class="product_01">
     <tr>
+        <th>JANコード</th>
         <th>商品名</th>
         <th>在庫数</th>
         <th>価格</th>
+        <th>分類</th>
     </tr>
     <% @products.each do |p| %>
         <tr>
+            <td><%= p.jan_code %></td>
             <td><%= p.product_name %></td>
             <td><%= p.product_stack %></td>
             <td><%= p.product_cost %></td>
+            <td><%= p.product_type %></td>
         </tr>
     <% end %>
 </table>

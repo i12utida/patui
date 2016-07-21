@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :logged_in_user, only: [:index,:lunch,:drink,:bread,:noodle,:create]
+  before_action :logged_in_user, only: [:create]
   def index
     @products = Product.all
   end

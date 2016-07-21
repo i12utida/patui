@@ -22,7 +22,7 @@ class QuestionnairesController < ApplicationController
   
   def delete
     @questionnaire = Questionnaire.find_by(:id => params[:id])
-    if current_user.id == @questionnaire.user_id
+    if current_user.id == @questionnaire.user_id || current_user.admin?
       @questionnaire.destroy
       flash[:success] = "削除しました。"
       redirect_to questionnaires_path

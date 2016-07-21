@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'details/index'
+
   root 'static_pages#home'
   get 'contact' => 'static_pages#contact'
   get 'stationery' => 'static_pages#stationery'
@@ -29,6 +31,7 @@ Rails.application.routes.draw do
   get 'drink' => 'products#drink'
   get "products/new" => "products#new"
   match 'products/create' => 'products#create',:via => :post
+  get "products/detail" => 'details#index'
 
   get 'registers' => 'registers#register'
   match 'procucts/buy'  => 'registers#buy',:via => :post
