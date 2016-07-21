@@ -7,6 +7,7 @@ class RegistersController < ApplicationController
     def buy
         @product = Product.find_by(jan_code: params[:product][:jan_code])
         @product.update({:product_stack => @product.product_stack - 1}) 
+        render "registers/register"
     end
     
     def product_params

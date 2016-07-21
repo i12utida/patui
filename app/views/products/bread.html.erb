@@ -1,15 +1,28 @@
 <% provide(:title, 'パン類') %>
 <h1>パン類</h1>
-<li>
-    <% if current_user.admin? %>
-        <%= link_to "商品追加", "/products/new" %>
-    <% end %>
+<% if logged_in? && current_user.admin? %>
+<list>
+    <%= link_to "商品追加", "/products/new" %>
+</list>
+<list>
+    <%= link_to "商品詳細", "/products/detail" %>
+</list>
+<% end %>
+<list>
     <%= link_to "商品一覧", products_path %>
+</list>
+<list>
     <%= link_to "弁当類", lunch_path %>
+</list>
+<list>
     <%= link_to "パン類", bread_path %>
+</list>
+<list>
     <%= link_to "麺類", noodle_path %>
+</list>
+<list>
     <%= link_to "飲料類", drink_path %>
-</li>
+</list>
 <table class="product_01">
     <tr>
         <th>商品名</th>

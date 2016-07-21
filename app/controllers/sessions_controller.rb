@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password]) #ユーザとパスワードの判定文
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      redirect_back_or user #ログイン後にユーザのページにリダイレクトする
+      redirect_back_or root_path #ログイン後にユーザのページにリダイレクトする
     else
       flash.now[:danger] = 'E-メールアドレスまたはパスワードが正しくありません' 
       render 'new'
