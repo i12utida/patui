@@ -6,8 +6,14 @@ class RegistersController < ApplicationController
     
     def buy
         @product = Product.find_by(jan_code: params[:product][:jan_code])
-        @product.update({:product_stack => @product.product_stack - 1}) 
-        render "registers/register"
+        if(@product.product_stack!=0)
+            @product.update({:product_stack => @product.product_stack - 1}) 
+            flash[:success] = "購入しました"
+            redirect_to "/registers"
+        else 
+            flash[:danger] = "在庫がありません。"
+            redirect_to "/registers"
+        end
     end
     
     def product_params
